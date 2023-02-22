@@ -28,7 +28,7 @@ jobs:
         run: |
           npm install
           npm run build
-          zip -r Flow.Launcher.Plugin.BetterCalculator-${{steps.version.outputs.prop}}.zip . -x '*.git*'
+          zip -r Flow.Launcher.Plugin.BetterCalculator-${{steps.version.outputs.prop}}.zip . -x '*.git*' -x "node_modules/*"
       - name: Publish
         uses: softprops/action-gh-release@v1
         with:
