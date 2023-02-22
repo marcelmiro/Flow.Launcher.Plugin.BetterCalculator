@@ -1,0 +1,12 @@
+{
+	"ID": "ae66d4e9d5ac43dc9d9abc7292c5eed4",
+	"ActionKeyword": "*",
+	"Name": "Better Calculator",
+	"Description": "Provide mathematical calculations.(Try 5*3-2 in Flow Launcher)",
+	"Author": "marcelmiro",
+	"Version": "0.0.1",
+	"Language": "Javascript",
+	"Website": "https://github.com/marcelmiro/Flow.Launcher.Plugin.BetterCalculator",
+	"ExecuteFileName": "./dist/index.js",
+	"IcoPath": "Images\\calculator.png"
+}
