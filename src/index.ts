@@ -13,28 +13,25 @@ const param = parameters[0]
 if (method === 'query' && typeof param === 'string') {
 	const res = calculate(param)
 
-	const formattedRes = res?.toLocaleString(undefined, {
-		maximumFractionDigits: 10,
-	})
+	if (typeof res === 'number') {
+		const formattedRes = res.toLocaleString(undefined, {
+			maximumFractionDigits: 10,
+		})
 
-	if (!res) console.log('{}')
-	else {
-		console.log(
-			JSON.stringify({
-				result: [
-					{
-						Title: formattedRes,
-						Subtitle: 'Copy this number to the clipboard',
-						JsonRPCAction: {
-							method: 'copy',
-							parameters: [res],
-						},
-						IcoPath: 'Images\\calculator.png',
-						score: res ? 100 : 0,
-					},
-				],
-			}),
-		)
+		const result = {
+			Title: formattedRes,
+			Subtitle: 'Copy this number to the clipboard',
+			JsonRPCAction: {
+				method: 'copy',
+				parameters: [res],
+			},
+			IcoPath: 'Images\\calculator.png',
+			score: 100,
+		}
+
+		console.log(JSON.stringify({ result: [result] }))
+	} else {
+		console.log('{}')
 	}
 }
 
